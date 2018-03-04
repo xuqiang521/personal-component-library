@@ -6,7 +6,6 @@ import Vui from 'src/index.js'
 import router from './router.config'
 
 Vue.config.productionTip = false
-console.log(Vui)
 Vue.use(Vui)
 
 /* eslint-disable no-new */

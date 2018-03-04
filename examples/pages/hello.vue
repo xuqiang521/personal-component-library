@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <v-hello message="hehe"></v-hello>
-  </div>
+  <v-hello message="my component library"></v-hello>
 </template>
 
 <script>

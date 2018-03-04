@@ -1,9 +1,15 @@
 {
-  "name": "library-test",
+  "name": "component-library-test",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "qdd",
-  "private": true,
+  "author": "qiangdada",
+  "main": "lib/vui.js",
+  "files": [
+    "lib",
+    "src",
+    "packages"
+  ],
+  "private": false,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
