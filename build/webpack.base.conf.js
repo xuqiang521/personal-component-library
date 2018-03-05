@@ -5,8 +5,11 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
+const getPoastcssPlugin = require('./utils/postcss_pipe');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+// var saladConfig = require('./salad.config.json');
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -84,6 +87,17 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     {
+      //       loader: 'css-loader'
+      //     }, {
+      //       loader: 'postcss-loader',
+      //       // options: {postcss: getPoastcssPlugin}
+      //     }
+      //   ]
+      // },
       ...utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
     ]
   },

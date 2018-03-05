@@ -1,6 +1,6 @@
 {
   "name": "component-library-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vue.js project",
   "author": "qiangdada",
   "main": "lib/vui.js",
@@ -16,7 +16,8 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js"
+    "build:vui": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
+    "build:vui-css": "gulp build --gulpfile packages/vui-css/gulpfile.js && rimraf lib/vui-css && cp-cli packages/vui-css/lib lib/vui-css"
   },
   "dependencies": {
     "vue": "^2.5.2",
@@ -37,6 +38,7 @@
     "chai": "^4.1.2",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
+    "cp-cli": "^1.1.0",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.0",
     "eslint": "^4.15.0",
@@ -71,6 +73,7 @@
     "postcss-easy-import": "^3.0.0",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
+    "postcss-salad": "^2.0.1",
     "postcss-url": "^7.2.1",
     "precss": "^3.1.2",
     "rimraf": "^2.6.0",

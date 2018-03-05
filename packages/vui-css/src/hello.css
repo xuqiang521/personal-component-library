@@ -1,0 +1,8 @@
+@b v-hello {
+  color: green;
+  transform: scale(1);
+
+  &__messgae {
+    background: red;
+  }
+}

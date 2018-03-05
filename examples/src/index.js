@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import Vui from 'src/index.js'
 import router from './router.config'
+import 'packages/vui-css/src/index.css'
 
 Vue.config.productionTip = false
 Vue.use(Vui)
