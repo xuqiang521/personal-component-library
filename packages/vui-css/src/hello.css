@@ -1,8 +1,8 @@
 @b v-hello {
-  color: green;
+  color: #fff;
   transform: scale(1);
 
-  &__messgae {
-    background: red;
+  @e message {
+    background: #0067ED;
   }
 }

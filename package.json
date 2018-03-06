@@ -17,7 +17,7 @@
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build:vui": "webpack --progress --hide-modules --config build/webpack.build.js && webpack --progress --hide-modules --config build/webpack.build.min.js",
-    "build:vui-css": "gulp build --gulpfile packages/vui-css/gulpfile.js && rimraf lib/vui-css && cp-cli packages/vui-css/lib lib/vui-css"
+    "build:vui-css": "gulp build --gulpfile packages/vui-css/gulpfile.js && rimraf lib/vui-css && cp-cli packages/vui-css/lib lib/vui-css && rimraf packages/vui-css/lib"
   },
   "dependencies": {
     "vue": "^2.5.2",
