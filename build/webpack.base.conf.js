@@ -87,17 +87,6 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },
-      // {
-      //   test: /\.css$/,
-      //   use: [
-      //     {
-      //       loader: 'css-loader'
-      //     }, {
-      //       loader: 'postcss-loader',
-      //       // options: {postcss: getPoastcssPlugin}
-      //     }
-      //   ]
-      // },
       ...utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
     ]
   },
