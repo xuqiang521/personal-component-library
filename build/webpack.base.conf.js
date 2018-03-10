@@ -9,7 +9,6 @@ const getPoastcssPlugin = require('./utils/postcss_pipe');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-// var saladConfig = require('./salad.config.json');
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
@@ -57,6 +56,18 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
+        // options: {
+        //   loaders: {
+        //     css: ExtractTextPlugin.extract({
+        //       use: 'css-loader',
+        //       use: [
+        //         { loader: 'css-loader', options: { sourceMap: true } },
+        //         { loader: 'postcss-loader', options: { sourceMap: true } }
+        //       ],
+        //       fallback: 'vue-style-loader'
+        //     })
+        //   }
+        // }
       },
       {
         test: /\.js$/,
@@ -138,7 +149,7 @@ module.exports = {
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
-      chunks: ['vendor', 'vui'],
+      chunks: ['manifest', 'vendor', 'vui'],
       template: 'examples/src/index.tpl',
       filename: 'index.html',
       inject: true
