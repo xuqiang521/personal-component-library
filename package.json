@@ -16,7 +16,7 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
-    "build:vui": "webpack --progress --hide-modules --config build/webpack.build.js && rimraf examples/dist  && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.build.min.js",
+    "build:vui": "webpack --progress --hide-modules --config build/webpack.build.js && rimraf examples/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.build.min.js",
     "build:vui-css": "gulp build --gulpfile packages/vui-css/gulpfile.js && rimraf lib/vui-css && cp-cli packages/vui-css/lib lib/vui-css && rimraf packages/vui-css/lib"
   },
   "dependencies": {
