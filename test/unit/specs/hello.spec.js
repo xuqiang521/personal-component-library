@@ -1,27 +1,45 @@
-import Vue from 'vue'
+import { createTest, createVue, destroyVM } from '../util'
 import Hello from 'packages/hello'
 
 describe('hello.vue', () => {
-  it('should render default contents', () => {
-    const Constructor = Vue.extend(Hello)
-    const vm = new Constructor().$mount()
-
-    console.log(vm.$el.querySelector('.v-hello p').textContent)
-    expect(vm.$el.querySelector('.v-hello p').textContent).to.have.be.equal('hello ')
+  let vm
+  afterEach(() => {
+    destroyVM(vm)
+  })
+  it('render default classList in hello', () => {
+    vm = createTest(Hello)
     expect(vm.$el.classList.contains('v-hello')).to.be.true
     const message = vm.$el.querySelector('.v-hello__message')
     expect(message.classList.contains('v-hello__message')).to.be.true
   })
-  it('should render prop contents', () => {
-    const Constructor = Vue.extend(Hello)
-    const vm = new Constructor({
-      propsData: {
-        message: 'component'
-      }
-    }).$mount()
-    expect(vm.$el.classList.contains('v-hello')).to.be.true
+  it('render default message in hello', () => {
+    vm = createTest(Hello)
+    expect(vm.$el.querySelector('.v-hello p').textContent).to.have.be.equal('hello ')
+  })
+  it('render custom message in hello', () => {
+    vm = createTest(Hello, { message: 'component' }, true)
     expect(vm.$el.querySelector('.v-hello p').textContent).to.have.be.equal('hello component')
-    const message = vm.$el.querySelector('.v-hello__message')
-    expect(message.classList.contains('v-hello__message')).to.be.true
+    expect(vm.message).to.equal('component')
+  })
+  it('create a hello for click with promise', (done) => {
+    let result
+    vm = createVue({
+      template: `
+        <v-hello @click="handleClick"></v-hello>
+      `,
+      methods: {
+        handleClick (msg) {
+          result = msg
+        }
+      }
+    }, true)
+    vm.$el.click()
+
+    expect(result).to.exist
+    setTimeout(_ => {
+      expect(result).to.exist
+      expect(result).to.equal('this is click emit')
+      done()
+    }, 20)
   })
 })
