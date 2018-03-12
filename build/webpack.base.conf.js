@@ -5,7 +5,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const webpack = require('webpack')
 // const merge = require('webpack-merge')
-const getPoastcssPlugin = require('./utils/postcss_pipe');
+// const getPoastcssPlugin = require('./utils/postcss_pipe');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -16,6 +16,14 @@ const PORT = process.env.PORT && Number(process.env.PORT)
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
+
+function wrap(render) {
+  return function() {
+    return render.apply(this, arguments)
+      .replace('<code v-pre class="', '<code class="hljs ')
+      .replace('<code>', '<code class="hljs">');
+  };
+};
 
 const createLintingRule = () => ({
   test: /\.(js|vue)$/,
@@ -31,7 +39,8 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     'vendor': ['vue', 'vue-router'],
-    'vui': './examples/src/index.js'
+    'vui': './examples/src/index.js',
+    'vui-mobile': './examples/src/mobile.js'
   },
   output: {
     path: path.join(__dirname, '../examples/dist'),
@@ -73,6 +82,20 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+      },
+      {
+        test: /\.md$/,
+        loader: 'vue-markdown-loader',
+        options: {
+          preventExtract: true,
+          preprocess: function(MarkdownIt, source) {
+            MarkdownIt.renderer.rules.table_open = function() {
+              return '<table class="table">';
+            };
+            MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
+            return source;
+          }
+        }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -152,6 +175,12 @@ module.exports = {
       chunks: ['manifest', 'vendor', 'vui'],
       template: 'examples/src/index.tpl',
       filename: 'index.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      chunks: ['manifest', 'vendor', 'vui-mobile'],
+      template: 'examples/src/index.tpl',
+      filename: 'mobile.html',
       inject: true
     })
   ]

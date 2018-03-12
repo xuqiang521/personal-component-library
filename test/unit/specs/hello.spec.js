@@ -35,7 +35,7 @@ describe('hello.vue', () => {
     }, true)
     vm.$el.click()
 
-    expect(result).to.exist
+    expect(result).to.not.exist
     setTimeout(_ => {
       expect(result).to.exist
       expect(result).to.equal('this is click emit')

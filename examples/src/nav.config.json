@@ -1,0 +1,20 @@
+{
+	"zh-CN": [
+		{
+			"name": "Vui 组件",
+			"showInMobile": true,
+			"groups": [
+				{
+					"groupName": "基础组件",
+					"list": [
+						{
+							"path": "/hello",
+							"title": "Hello"
+						}
+					]
+				}
+			]
+		}
+	]
+}
+  
