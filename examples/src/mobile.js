@@ -39,6 +39,8 @@ router.beforeEach((route, redirect, next) => {
 })
 
 new Vue({ // eslint-disable-line
-  render: h => h(MobileApp),
-  router
-}).$mount('#app-container')
+  el: '#app-container',
+  router,
+  components: { MobileApp },
+  template: '<MobileApp/>'
+})

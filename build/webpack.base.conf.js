@@ -17,13 +17,13 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-function wrap(render) {
+function wrap (render) {
   return function() {
     return render.apply(this, arguments)
       .replace('<code v-pre class="', '<code class="hljs ')
-      .replace('<code>', '<code class="hljs">');
-  };
-};
+      .replace('<code>', '<code class="hljs">')
+  }
+}
 
 const createLintingRule = () => ({
   test: /\.(js|vue)$/,

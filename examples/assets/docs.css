@@ -213,38 +213,38 @@ code.hljs {
   }
 }
 
-// .l {
-// 	float: left;
-// }
+.l {
+	float: left;
+}
 
-// .r {
-// 	float: right;
-// }
+.r {
+	float: right;
+}
 
-// .gray {
-// 	color: #999;
-// }
+.gray {
+	color: #999;
+}
 
-// .placeholder {
-// 	font-size: 14px;
-// 	color: #CCC
-// }
+.placeholder {
+	font-size: 14px;
+	color: #CCC
+}
 
-// .vui-intro {
-//   text-align: center;
-//   &__logo {
-//     img {
-//       margin: 0 auto;
-//     }
-//   }
-//   &__title {
-//     font-size: 45px;
-//     line-height: 60px;
-//     font-weight: 400;
-//     font-family: monospace;
-//   }
-//   &__subtitle {
-//     font-size: 15px;
-//     color: #455a64;
-//   }
-// }
+.vui-intro {
+  text-align: center;
+  &__logo {
+    img {
+      margin: 0 auto;
+    }
+  }
+  &__title {
+    font-size: 45px;
+    line-height: 60px;
+    font-weight: 400;
+    font-family: monospace;
+  }
+  &__subtitle {
+    font-size: 15px;
+    color: #455a64;
+  }
+}

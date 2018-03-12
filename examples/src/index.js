@@ -8,7 +8,7 @@ import navConfig from './nav.config'
 import isMobile from './is-mobile'
 import Vui from 'src/index.js'
 import 'packages/vui-css/src/index.css'
-// import '../assets/docs.css'
+import '../assets/docs.css'
 
 Vue.config.productionTip = false
 Vue.use(Vui)
@@ -27,7 +27,6 @@ routesConfig.push({
 })
 
 const router = new VueRouter({
-  mode: 'hash',
   base: isProduction ? '/vui/' : __dirname,
   routes: routesConfig
 })
