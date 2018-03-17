@@ -2,26 +2,24 @@
   <div class="side-nav">
     <ul>
       <li class="nav-item" v-for="item in data">
-        <a href="javascript:void(0)" v-if="!item.path" @click="handleTitleClick(item)">{{item.name}}</a>
+        <a href="javascript:void(0)" v-if="!item.path" @click="handleTitleClick(item)">{{ item.name }}</a>
         <router-link
           v-else
           active-class="active"
           :to="base + item.path"
           exact
-          v-text="item.title || item.name">
-        </router-link>
+          v-text="item.title || item.name" />
         <ul class="pure-menu-list sub-nav" v-if="item.children">
           <li class="nav-item" v-for="navItem in item.children">
             <router-link
               active-class="active"
               :to="base + navItem.path"
-              v-text="navItem.title || navItem.name">
-            </router-link>
+              v-text="navItem.title || navItem.name" />
           </li>
         </ul>
         <template v-if="item.groups">
           <div class="nav-group" v-for="group in item.groups">
-            <div class="nav-group__title">{{group.groupName}}</div>
+            <div class="nav-group__title">{{ group.groupName }}</div>
             <ul class="pure-menu-list">
               <template v-for="navItem in group.list">
                 <li
@@ -30,8 +28,7 @@
                   <router-link
                     active-class="active"
                     :to="base + navItem.path"
-                    v-text="navItem.title">
-                  </router-link>
+                    v-text="navItem.title" />
                 </li>
               </template>
             </ul>

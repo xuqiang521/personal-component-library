@@ -8,7 +8,7 @@ import isMobile from './is-mobile.js'
 
 import 'packages/vui-css/src/index.css'
 
-// import DemoList from './components/demo-list.vue'
+import DemoList from './components/demo-list.vue'
 
 Vue.use(Vui)
 Vue.use(VueRouter)
@@ -16,11 +16,10 @@ Vue.use(VueRouter)
 const isProduction = process.env.NODE_ENV === 'production'
 const routesConfig = registerRoute(navConfig, true)
 routesConfig.push({
-  path: '/'
-  // component: DemoList.default || DemoList
+  path: '/',
+  component: DemoList.default || DemoList
 })
 const router = new VueRouter({
-  mode: 'hash',
   base: isProduction ? '/vui/' : __dirname,
   routes: routesConfig
 })
