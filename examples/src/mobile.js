@@ -17,10 +17,10 @@ const isProduction = process.env.NODE_ENV === 'production'
 const routesConfig = registerRoute(navConfig, true)
 routesConfig.push({
   path: '/',
-  component: DemoList.default || DemoList
+  component: DemoList
 })
 const router = new VueRouter({
-  base: isProduction ? '/vui/' : __dirname,
+  base: isProduction ? '/personal-component-library/' : __dirname,
   routes: routesConfig
 })
 console.log(isMobile)
@@ -28,7 +28,7 @@ router.beforeEach((route, redirect, next) => {
   if (route.path !== '/') {
     window.scrollTo(0, 0)
   }
-  const pathname = isProduction ? '/vui/' : '/'
+  const pathname = isProduction ? '/personal-component-library/' : '/'
   if (!isMobile) {
     window.location.replace(pathname)
     return
@@ -36,8 +36,8 @@ router.beforeEach((route, redirect, next) => {
   document.title = route.meta.title || document.title
   next()
 })
-
-new Vue({ // eslint-disable-line
+/* eslint-disable no-new */
+new Vue({
   el: '#app-container',
   router,
   components: { MobileApp },

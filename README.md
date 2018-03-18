@@ -8,7 +8,7 @@
 
 于是我开始参考市场上一些优秀的 UI 组件库，比如 [`element-ui`](https://github.com/ElemeFE/element)、[`vux`](https://github.com/airyland/vux)、 [`vant`](https://github.com/youzan/vant)等，对其源码进行拜读，了解其架构的搭建，随后整理出一套属于自己的移动端 UI 组件库 [`vui`](https://github.com/Brickies/vui) 。
 
-我在业余时间活跃于各大技术社区，常有一些或工作一段时间的、或还在准备找实习工作的小伙伴问笔者一些问题：怎样沉淀自己，做自己的框架、轮子、库？怎样做一个组件库？自己做过一个组件库会不会成为简历的亮点？你能不能写一些有关组件库开发的相关文章？…...
+我在业余时间活跃于各大技术社区，常有一些或工作一段时间的、或还在准备找实习工作的小伙伴问笔者一些问题：怎样沉淀自己，做自己的框架、轮子、库？怎样做一个组件库？自己做过一个组件库会不会成为简历的亮点？你能不能写一些有关组件库开发的相关文章？...
 
 本着答惑解疑和分享的心情，这篇博文便诞生了。
 
@@ -228,7 +228,7 @@ OK，开始改造你初始化出来的项目的目录吧。
 
 - `App.vue`
 
-  ```vue
+  ```html
   <template>
     <div id="app">
       <router-view/>
@@ -310,7 +310,7 @@ OK，修改好了。重新执行一次 `npm run dev`，然后你的项目便能�
 
 `hello.vue` 内容如下
 
-```vue
+```html
 <template>
   <div class="v-hello">
     hello {{ message }}
@@ -367,7 +367,7 @@ Vue.component(Hello.name, Hello)
 
 在 `examples/pages` 中我们需要建立和组件名同名的 demo 文件，并对组件进行使用 
 
-```vue
+```html
 <v-hello message="my component library"></v-hello>
 ```
 
@@ -729,7 +729,7 @@ npm init
 
 然后确定，则会生成 `package.json` ，如下
 
-```json
+```javascript
 {
   "name": "qiangdada-npm-test",
   "version": "1.0.0",
@@ -772,7 +772,7 @@ npm publish
 
 修改 `package.json` 文件中的部分描述
 
-```json
+```javascript
 // npm 包js入口文件改为 lib/vui.js
 "main": "lib/vui.js",
 // npm 发布出去的包包含的文件
@@ -970,7 +970,7 @@ gulp -v
 
 接下来，我们看看 `packages/vui-css/package.json` 文件中需要用到什么依赖
 
-```json
+```javascript
 {
   "name": "vui-css",
   "version": "1.0.0",
@@ -1366,20 +1366,20 @@ hello.vue
 在实战开始前，我们先看下本章节需要用到的目录结构
 
 ```shell
-├── assets						css，图片等资源都在这
-├── dist                     	打包好的文件都在这
-├── docs                     	PC端需要展示的markdown文件都在这
-├── pages                     	移动端所有的demo都在这
+├── assets                  css，图片等资源都在这
+├── dist                    打包好的文件都在这
+├── docs                    PC端需要展示的markdown文件都在这
+├── pages                   移动端所有的demo都在这
 ├── src              	      	
-│   ├── components            	demo中可以复用的模块放在这里面
-│   ├── index.tpl              	页面入口
-│   ├── is-mobile.js            判断设备
-│   ├── index.js              	PC端主入口js
-│   ├── App.vue               	PC端入口文件
-│   ├── mobile.js              	移动端端主入口js
-│   ├── MobileApp.vue           移动端入口文件
-│   ├── nav.config.json			路由控制文件
-│   ├── router.config.js		动态注册路由
+│   ├── components          demo中可以复用的模块放在这里面
+│   ├── index.tpl           页面入口
+│   ├── is-mobile.js        判断设备
+│   ├── index.js            PC端主入口js
+│   ├── App.vue             PC端入口文件
+│   ├── mobile.js           移动端端主入口js
+│   ├── MobileApp.vue       移动端入口文件
+│   ├── nav.config.json     路由控制文件
+│   ├── router.config.js    动态注册路由
 ```
 
 本章节，主要带着大家实现 markdown 文件的转化，以及不同设备的路由适配。
@@ -1718,7 +1718,7 @@ new Vue({
 
 第一步，在 `examples/src` 下新建文件 `nav.config.json` 文件，写入以下内容
 
-```json
+```javascript
 {
   // 为了之后组件文档多语言化
   "zh-CN": [
@@ -1727,15 +1727,15 @@ new Vue({
       "showInMobile": true,
       "groups": [
         {
-		  // 管理相同类型下的所有组件
+		      // 管理相同类型下的所有组件
           "groupName": "基础组件",
-		  "list": [
-		    {
-			  // 访问组件的相对路径
+		      "list": [
+		        {
+			        // 访问组件的相对路径
               "path": "/hello",
               // 组件描述
-			  "title": "Hello"
-			}
+              "title": "Hello"
+            }
           ]
         }
       ]

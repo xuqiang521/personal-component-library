@@ -39,7 +39,6 @@ export default {
     },
     base: String
   },
-
   data() {
     return {
       isOpen: false

@@ -1,20 +1,36 @@
 {
-	"zh-CN": [
-		{
-			"name": "Vui 组件",
-			"showInMobile": true,
-			"groups": [
-				{
-					"groupName": "基础组件",
-					"list": [
-						{
-							"path": "/hello",
-							"title": "Hello"
-						}
-					]
-				}
-			]
-		}
-	]
+  "zh-CN": [
+    {
+      "name": "开发指南",
+      "groups": [
+        {
+          "list": [
+            {
+              "path": "/intro",
+              "title": "项目介绍"
+            },
+            {
+              "path": "/quickstart",
+              "title": "快速上手"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vui 组件",
+      "showInMobile": true,
+      "groups": [
+        {
+          "groupName": "基础组件",
+          "list": [
+            {
+              "path": "/hello",
+              "title": "Hello"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
-  

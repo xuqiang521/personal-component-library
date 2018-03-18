@@ -19,8 +19,6 @@ import MobileNav from './mobile-nav';
 export default {
   data() {
     return {
-      highlights: [],
-      navState: [],
       data: navConfig['zh-CN'],
       base: '/component'
     };

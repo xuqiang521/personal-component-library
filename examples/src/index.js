@@ -16,7 +16,7 @@ Vue.use(VueRouter)
 
 const routesConfig = registerRoute(navConfig)
 const isProduction = process.env.NODE_ENV === 'production'
-
+console.log('process.env.NODE_ENV', process.env.NODE_ENV)
 routesConfig.push({
   path: '/',
   redirect: '/component/hello'
@@ -27,16 +27,15 @@ routesConfig.push({
 })
 
 const router = new VueRouter({
-  base: isProduction ? '/vui/' : __dirname,
+  base: isProduction ? '/personal-component-library/' : __dirname,
   routes: routesConfig
 })
-console.log(isMobile)
 router.beforeEach((route, redirect, next) => {
   if (route.path !== '/') {
     window.scrollTo(0, 0)
   }
 
-  const pathname = isProduction ? '/vui/mobile' : '/mobile.html'
+  const pathname = isProduction ? '/personal-component-library/mobile' : '/mobile.html'
   if (isMobile) {
     window.location.replace(pathname)
     return
