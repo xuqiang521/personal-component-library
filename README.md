@@ -1,3 +1,5 @@
+[![Version](https://img.shields.io/npm/v/component-library-test.svg)](https://www.npmjs.com/package/component-library-test) [![Downloads](http://img.shields.io/npm/dm/component-library-test.svg)](https://www.npmjs.com/package/component-library-test) [![License](https://img.shields.io/npm/l/component-library-test.svg?style=flat)](https://opensource.org/licenses/MIT) [![TravisCI](https://travis-ci.org/Brickies/vui.svg)](https://travis-ci.org/Brickies/vui)
+
 ## 一、写在前面
 
 ### 1、灵感来源

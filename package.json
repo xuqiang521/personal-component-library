@@ -11,16 +11,19 @@
   ],
   "private": false,
   "scripts": {
-    "bootstrap": "yarn || npm install",
+    "bootstrap": "cnpm install",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "deploy": "npm run deploy:docs && gh-pages -d examples/dist",
     "deploy:docs": "rimraf examples/dist && node build/build.js",
+    "clean": "rimraf lib && rimraf packages/*/lib",
+    "dist": "npm run clean && npm run lint && npm run build:vui && npm run build:vui-css",
+    "release": "npm run bootstrap && sh build/release.sh",
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build:vui": "webpack --progress --hide-modules --config build/webpack.build.js && rimraf examples/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.build.min.js",
-    "build:vui-css": "gulp build --gulpfile packages/vui-css/gulpfile.js && rimraf lib/vui-css && cp-cli packages/vui-css/lib lib/vui-css && rimraf packages/vui-css/lib"
+    "build:vui-css": "gulp build --gulpfile packages/vui-css/gulpfile.js && rimraf lib/vui-css && cp-cli packages/vui-css/lib lib/vui-css"
   },
   "dependencies": {
     "vue": "^2.5.2",
