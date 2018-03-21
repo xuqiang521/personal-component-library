@@ -1,6 +1,6 @@
 {
   "name": "component-library-test",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A Vue.js project",
   "author": "qiangdada",
   "main": "lib/vui.js",
