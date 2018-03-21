@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "description": "A Vue.js project",
   "author": "qiangdada",
+  "license": "MIT",
   "main": "lib/vui.js",
   "files": [
     "lib",

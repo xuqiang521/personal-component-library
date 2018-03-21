@@ -1,6 +1,6 @@
 {
   "name": "component-library-test-css",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "vui css.",
   "main": "lib/index.css",
   "style": "lib/index.css",
@@ -11,6 +11,7 @@
   "scripts": {
     "build": "gulp build"
   },
+  "author": "qiangdada",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.1",
