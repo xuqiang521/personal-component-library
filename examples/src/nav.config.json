@@ -27,6 +27,64 @@
             {
               "path": "/hello",
               "title": "Hello"
+            },
+            {
+              "path": "/button",
+              "title": "Button 按钮"
+            },
+            {
+              "path": "/cell",
+              "title": "Cell 单元格"
+            },
+            {
+              "path": "/icon",
+              "title": "Icon 图标"
+            },
+            {
+              "path": "/search",
+              "title": "Search 搜索框"
+            },
+            {
+              "path": "/search-list",
+              "title": "SearchList 搜索列表"
+            },
+            {
+              "path": "/select",
+              "title": "Select 选择器"
+            },
+            {
+              "path": "/swiper",
+              "title": "Swiper 轮播"
+            }
+          ]
+        },
+        {
+          "groupName": "表单",
+          "list": [
+            {
+              "path": "/switch",
+              "title": "Switch 开关"
+            }
+          ]
+        },
+        {
+          "groupName": "操作反馈",
+          "list": [
+            {
+              "path": "/picker",
+              "title": "Picker 选择器"
+            },
+            {
+              "path": "/dialog",
+              "title": "Dialog 弹框"
+            },
+            {
+              "path": "/scroller",
+              "title": "Scroller 下拉刷新上拉加载"
+            },
+            {
+              "path": "/toast",
+              "title": "Toast 轻提示"
             }
           ]
         }

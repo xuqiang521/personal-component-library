@@ -1,4 +1,4 @@
-* {
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, iframe {
   margin: 0;
   padding: 0;
   border: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: monospace, 'Helvetica Neue', Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
+  font-family: 'Helvetica Neue', Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',SimSun,sans-serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   background-color: #f8f8f8;

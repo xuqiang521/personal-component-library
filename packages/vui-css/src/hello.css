@@ -1,5 +1,9 @@
+@define-mixin color {
+  color: red
+}
+
 @b v-hello {
-  color: #fff;
+  @mixin color;
   transform: scale(1);
 
   @e message {
