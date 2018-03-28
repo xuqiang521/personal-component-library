@@ -1,6 +1,6 @@
 {
   "name": "component-library-test-css",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "vui css.",
   "main": "lib/index.css",
   "style": "lib/index.css",
