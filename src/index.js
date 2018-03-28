@@ -14,6 +14,7 @@ import Swipe from '../packages/swiper/swipe'
 import SwipeItem from '../packages/swiper/swipe-item'
 import Swiper from '../packages/swiper'
 import Switch from '../packages/switch'
+import Skeleton from '../packages/skeleton'
 import $Dialog from '../packages/dialog/dialog.js'
 import $Toast from '../packages/toast/toast.js'
 
@@ -35,6 +36,7 @@ const install = function (Vue) {
   Vue.component(SwipeItem.name, SwipeItem)
   Vue.component(Swiper.name, Swiper)
   Vue.component(Switch.name, Switch)
+  Vue.component(Skeleton.name, Skeleton)
 
   Vue.prototype.$dialog = $Dialog
   Vue.prototype.$toast = $Toast
@@ -60,6 +62,7 @@ export default {
   SearchList,
   Select,
   Switch,
+  Skeleton,
   $Dialog,
   $Toast
 }

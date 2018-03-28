@@ -13,7 +13,7 @@
   "private": false,
   "scripts": {
     "bootstrap": "cnpm install",
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "npm run bootstrap && webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "deploy": "npm run deploy:docs && gh-pages -d examples/dist",
     "deploy:docs": "rimraf examples/dist && node build/build.js",
     "clean": "rimraf lib && rimraf packages/*/lib",
@@ -22,9 +22,13 @@
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit",
+    "test:coverage": "find test/unit/coverage/lcov-report -name 'index.html' | sed -n 1,1p  | xargs -I {} open {}  ",
     "lint": "eslint --ext .js,.vue src test/unit",
     "build:vui": "webpack --progress --hide-modules --config build/webpack.build.js && rimraf examples/dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config build/webpack.build.min.js",
     "build:vui-css": "gulp build --gulpfile packages/vui-css/gulpfile.js && rimraf lib/vui-css && cp-cli packages/vui-css/lib lib/vui-css"
+  },
+  "peerDependencies": {
+    "vue": "^2.5.2"
   },
   "dependencies": {
     "vue": "^2.5.2",
@@ -69,7 +73,6 @@
     "html-webpack-plugin": "^2.30.1",
     "inject-loader": "^3.0.0",
     "inquirer": "^5.1.0",
-    "isparta-loader": "^2.0.0",
     "karma": "^1.4.1",
     "karma-coverage": "^1.1.1",
     "karma-mocha": "^1.3.0",

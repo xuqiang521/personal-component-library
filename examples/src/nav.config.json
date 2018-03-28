@@ -87,6 +87,15 @@
               "title": "Toast 轻提示"
             }
           ]
+        },
+        {
+          "groupName": "内容占位",
+          "list": [
+            {
+              "path": "/skeleton",
+              "title": "Skeleton 占位"
+            }
+          ]
         }
       ]
     }

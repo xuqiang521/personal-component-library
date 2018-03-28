@@ -77,10 +77,13 @@ export default {
   }
 
   .mobile-container {
+    max-width: 800px;
+    margin: 0 auto;
     height: 100%;
     overflow: auto;
     background: #f8f8f8;
     position: relative;
+    box-shadow: 0 0 20px 0 #999;
     -webkit-overflow-scrolling: touch;
   }
 
